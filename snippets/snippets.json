@@ -1,0 +1,104 @@
+{
+  "Logging": {
+    "prefix": "log",
+    "body": [
+      "console.log($1);"
+    ],
+    "description": "this will log to the screen"
+  },
+  "Logging error": {
+    "prefix": "logerr",
+    "body": [
+      "console.error($1);"
+    ],
+    "description": "this will log an error to the screen"
+  },
+  "Logging warning": {
+    "prefix": "logwarn",
+    "body": [
+      "console.warn($1);"
+    ],
+    "description": "this will log a warning to the screen"
+  },
+  "If Else": {
+    "prefix": "elif",
+    "body": [
+      "if($1) {",
+      "  $2",
+      "} else {",
+      "  $3",
+      "}"
+    ],
+    "description": "Creates a if-else"
+  },
+  "If Else If Else": {
+    "prefix": "eliff",
+    "body": [
+      "if($1) {",
+      "  $2",
+      "} else if($3) {",
+      "else {",
+      "  $4",
+      "}"
+    ],
+    "description": "Creates a if, else-if, else"
+  },
+  "Try Catch Finally": {
+    "prefix": "tcf",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (ex) {",
+      "  $2",
+      "} finally {",
+      "  $3",
+      "}"
+    ],
+    "description": "Creates a try, catch, finally"
+  },
+  "Switch Case Default": {
+    "prefix": "scd",
+    "body": [
+      "switch (condition) {",
+      "  case '$2':",
+      "    return $3",
+      "  default:",
+      "    return $4",
+      "}"
+    ],
+    "description": "Creates a switch with a case and default"
+  },
+  "Array Filter": {
+    "prefix": "a-filter",
+    "body" : [
+      "let array = []",
+      "const filteredArray = array.filter(x => x > 1);"
+    ],
+    "description": "Filters an array"
+  },
+  "Array Reduce": {
+    "prefix": "a-reduce",
+    "body" : [
+      "let array = [];",
+      "array.reduce((acc,curr) => acc + curr);"
+    ],
+    "description": "Reduces an array"
+  },
+  "Array Contains": {
+    "prefix": "a-contains",
+    "body" : [
+      "let array = [];",
+      "array.some(x => x === 10)"
+    ],
+    "description" : "Returns true if array contains value"
+  },
+  "Array All": {
+    "prefix": "a-all",
+    "body" : [
+      "let array = [];",
+      "array.every(x => x === 10)"
+    ],
+    "description" : "Returns true if all array items contains this value"
+  }
+
+}
