@@ -2,7 +2,7 @@
     "name": "js-snippets",
     "displayName": "js-snippets",
     "description": "Snippets for JavaScript",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "chris-noring",
     "engines": {
         "vscode": "^1.28.0"

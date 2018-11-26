@@ -7,20 +7,26 @@ A collection of JS snippets
 
 The following commands are available:
 
-- `log`, prints console.log()
-- `log-err`, prints console.error()
-- `log-warn`, prints console.warn()
-- `elif`, prints if, else
-- `eliff`, prints if, else-if, else
-- `tcf`, prints try, catch, finally
-- `scd`, prints switch, case, default
-- `a-filter`, creates an array and calls `filter()`
-- `a-reduce`, creates an array and calls `reduce()`
-- `a-contains`, creates an array and calls `some()`
-- `a-all`, creates an array and calls `every()`
+- `js-log`, prints console.log()
+- `js-log-err`, prints console.error()
+- `js-log-warn`, prints console.warn()
+- `js-elif`, prints if, else
+- `js-eliff`, prints if, else-if, else
+- `js-tcf`, prints try, catch, finally
+- `js-scd`, prints switch, case, default
+- `js-filter`, creates an array and calls `filter()`
+- `js-reduce`, creates an array and calls `reduce()`
+- `js-contains`, creates an array and calls `some()`
+- `js-all`, creates an array and calls `every()`
 
 ## Release Notes
 This is the release notes.
+
+### 0.0.5
+adding repo and image, renaming all commands to `js-` something to make it easier to find them
+
+### 0.0.4
+minor corrections
 
 ### 0.0.3
 - added try, catch, finally
