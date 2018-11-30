@@ -1,46 +1,27 @@
 {
   "Logging": {
     "prefix": "js-log",
-    "body": [
-      "console.log($1);"
-    ],
+    "body": ["console.log($1);"],
     "description": "this will log to the screen"
   },
   "Logging error": {
     "prefix": "js-log-err",
-    "body": [
-      "console.error($1);"
-    ],
+    "body": ["console.error($1);"],
     "description": "this will log an error to the screen"
   },
   "Logging warning": {
     "prefix": "js-log-warn",
-    "body": [
-      "console.warn($1);"
-    ],
+    "body": ["console.warn($1);"],
     "description": "this will log a warning to the screen"
   },
   "If Else": {
     "prefix": "js-elif",
-    "body": [
-      "if($1) {",
-      "  $2",
-      "} else {",
-      "  $3",
-      "}"
-    ],
+    "body": ["if($1) {", "  $2", "} else {", "  $3", "}"],
     "description": "Creates a if-else"
   },
   "If Else If Else": {
     "prefix": "js-eliff",
-    "body": [
-      "if($1) {",
-      "  $2",
-      "} else if($3) {",
-      "else {",
-      "  $4",
-      "}"
-    ],
+    "body": ["if($1) {", "  $2", "} else if($3) {", "else {", "  $4", "}"],
     "description": "Creates a if, else-if, else"
   },
   "Try Catch Finally": {
@@ -69,36 +50,126 @@
     "description": "Creates a switch with a case and default"
   },
   "Array Filter": {
-    "prefix": "js-filter",
-    "body" : [
+    "prefix": "js-arr-filter",
+    "body": [
       "let array = []",
       "const filteredArray = array.filter(x => x > 1);"
     ],
     "description": "Filters an array"
   },
   "Array Reduce": {
-    "prefix": "js-reduce",
-    "body" : [
-      "let array = [];",
-      "array.reduce((acc,curr) => acc + curr);"
-    ],
+    "prefix": "js-arr-reduce",
+    "body": ["let array = [];", "array.reduce((acc,curr) => acc + curr);"],
     "description": "Reduces an array"
   },
   "Array Contains": {
-    "prefix": "js-contains",
-    "body" : [
-      "let array = [];",
-      "array.some(x => x === 10)"
-    ],
-    "description" : "Returns true if array contains value"
+    "prefix": "js-arr-contains",
+    "body": ["let array = [];", "array.some(x => x === 10)"],
+    "description": "Returns true if array contains value"
   },
   "Array All": {
-    "prefix": "js-all",
-    "body" : [
-      "let array = [];",
-      "array.every(x => x === 10)"
+    "prefix": "js-arr-all",
+    "body": ["let array = [];", "array.every(x => x === 10)"],
+    "description": "Returns true if all array items contains this value"
+  },
+  "Destructuring Array": {
+    "prefix": "js-dest-array",
+    "body": [
+      "const [ first, second, ...remainder ] = [ 1,2 ,3, 4, 5, 6 ];",
+      "console.log(first); // 1",
+      "console.log(second) // 2",
+      "remainder.forEach(val => console.log(val)); // 3, 4, 5, 6"
     ],
-    "description" : "Returns true if all array items contains this value"
+    "description": "shows how to use destructuring on an array"
+  },
+  "Destructuring Object": {
+    "prefix": "js-dest-object",
+    "body": [
+      "const product = {",
+      "  name: 'chris',",
+      "  description: 'cloud developer advocate',",
+      "  twitter: '@chris_noring'",
+      "};",
+      "const { name, description, twitter } = product;"
+    ],
+    "description": "shows how to use destructuring on an object"
+  },
+  "Destructuring parameter": {
+    "prefix": "js-dest-param",
+    "body": [
+      "const config = { enable: true, useSetting: false };",
+      "",
+      "function init({ enable, useSetting }) {",
+      "  if(enable) {",
+      "    console.log('enable');",
+      "  }",
+      "  if(useSetting) {",
+      "    console.log('use setting');",
+      "  }",
+      "}",
+      "",
+      "init(config);"
+    ],
+    "description": "shows how to use destructuring on a function input parameter"
+  },
+  "Promise creation": {
+    "prefix": "js-promise-create",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "  let condition = false;",
+      "  if(condition) {",
+      "    resolve('data')",
+      "  } else {",
+      "    reject('error')",
+      "}",
+      "})"
+    ],
+    "description": "creates a Promise by instantiating it"
+  },
+  "Promise shorthand": {
+    "prefix": "js-promise-shorthand",
+    "body": [
+      "const promiseThatWillResolve = Promise.resolve('data');",
+      "const promiseThatWillReject = Promise.reject('error');"
+    ],
+    "description": "uses the static resolve/reject, good for unit tests"
+  },
+  "Promise all": {
+    "prefix": "js-promise-all",
+    "body": [
+      "const getData = () => Promise.resolve('data');",
+      "const getMoreData = () => Promise.resolve('more data');",
+      "",
+      "Promise.all(",
+      "  getData(),",
+      "  getMoreData()",
+      ").then(result => {",
+      "  const [data, moreData] = result;",
+      "})"
+    ],
+    "description": "uses the static all(), allows us to have a list of Promises finish at the same time"
+  },
+  "Async/await": {
+    "prefix": "js-async-await",
+    "body": [
+      "async function getData() {",
+      "  return Promise.resolve('data');",
+      "}",
+      "",
+      "async function getMoreData(data) {",
+      "  return Promise.resolve(data + 'more data');",
+      "}",
+      "",
+      "function getAll() {",
+      "  const data = await getData();",
+      "  const moreData = await getMoreData(data);",
+      "  return `All the data: ${data}, ${moreData}`;",
+      "}",
+      "",
+      "getAll().then((all) => {",
+      "  console.log('all the data')",
+      "})"
+    ],
+    "description": "demonstrates async/await"
   }
-
 }
