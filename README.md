@@ -1,6 +1,7 @@
 # js-snippets
 
 This is an extension meant to give you some awesome JS snippets
+![alt text](images/js-snippets.gif "Using the snippet")
 
 ## Features
 
@@ -31,6 +32,10 @@ The following commands are available:
 ## Release Notes
 
 This is the release notes.
+
+### 1.0.0
+
+Added video to showcase usage
 
 ### 0.0.6
 
