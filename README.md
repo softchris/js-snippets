@@ -11,7 +11,8 @@ The following commands are available:
 
 - `js-log`, prints console.log()
 - `js-log-err`, prints console.error()
-- `js-log-warn`, prints console.warn()
+- `js-log-warn`, prints console.warn(),
+- `js-log-info`, prints console.info()
 - `js-elif`, prints if, else
 - `js-eliff`, prints if, else-if, else
 - `js-tcf`, prints try, catch, finally
@@ -28,6 +29,14 @@ The following commands are available:
 - `js-promise-shorthand`, uses the static resolve/reject, good for unit tests
 - `js-promise-all`, uses the static all(), allows us to have a list of Promises finish at the same time
 - `js-async-await`, demonstrates async/await
+- `js-regex-test-digits`, demonstrates string method `test()` that takes a regular expression and return true/false if string is number.
+- `js-regex-test-word`, demonstrates string method `test()` that takes a regular expression and returns  true/false if string is word.
+- `js-regex-match`, demonstrates RegEx match, that.
+- `js-regex-match-named-group`, demonstrates RegEx match and use a so called named group.
+- `js-rest`, shows the ES6 features REST.
+- `js-rest-function`, shows the REST feature when used in a function.
+- `js-property-shorthand`, shows how you can type less when declaring properties in an object.
+- `js-computed-props`, shows computed properties in an object.
 
 ## Release Notes
 

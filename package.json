@@ -1,8 +1,8 @@
 {
   "name": "js-snippets",
-  "displayName": "js-snippets",
+  "displayName": "JavaScript Snippets for VS Code",
   "description": "Snippets for JavaScript",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "chris-noring",
   "engines": {
     "vscode": "^1.28.0"

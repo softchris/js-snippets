@@ -14,6 +14,11 @@
     "body": ["console.warn($1);"],
     "description": "this will log a warning to the screen"
   },
+  "Logging info": {
+    "prefix": "js-log-info",
+    "body": ["console.info($1);"],
+    "description": "this will log a more detailed info to the screen"
+  },
   "If Else": {
     "prefix": "js-elif",
     "body": ["if($1) {", "  $2", "} else {", "  $3", "}"],
@@ -59,7 +64,7 @@
   },
   "Array Reduce": {
     "prefix": "js-arr-reduce",
-    "body": ["let array = [];", "array.reduce((acc,curr) => acc + curr);"],
+    "body": ["let array = [];", "array.reduce((acc,curr, index, arr) => acc + curr);"],
     "description": "Reduces an array"
   },
   "Array Contains": {
@@ -171,5 +176,70 @@
       "})"
     ],
     "description": "demonstrates async/await"
+  },
+  "regex-test-digits": {
+    "prefix": "js-regex-test-digits",
+    "body": [
+      "const isMatch = /\\d+/.test('abc123')"
+    ],
+    "description" : "test if string contains digits, returns true/false"
+  },
+  "regex-test-word": {
+    "prefix": "js-regex-test-word",
+    "body": [
+      "const isMatch = /\\w+/.test('abc123')"
+    ],
+    "description": "test if string contains a word boundary, returns true/false"
+  },
+  "regex-test-match": {
+    "prefix": "js-regex-match",
+    "body": [
+      "const [, extension] = 'file.txt'.match(/\\.(\\w+)/)"
+    ],
+    "description": "matches a file extension"
+  },
+  "regex-test-match-named-group": {
+    "prefix": "js-regex-match-named-group",
+    "body": [
+      "const { groups: { extension } } = 'file.txt'.match(/\\.(?<extension>\\w+)/)"
+    ],
+    "description": "matches a file extension, "
+  },
+  "rest": {
+    "prefix": "js-rest",
+    "body": [
+      "var firstArray = [4, 5, 6];",
+      "var array = [ 1, 2, 3, ...firstArray];"
+    ]
+  },
+  "rest-function": {
+    "prefix": "js-rest-function",
+    "body": [
+      "var firstArray = [4, 5, 6];",
+      "function sum(a, b, ...rest) {",
+      "  console.log(rest.length);",
+      "}",
+      "sum(1,2, ...firstArray)"
+    ]
+  },
+  "property-shorthand": {
+    "prefix": "js-property-shorthand",
+    "body": [
+      "let x = 1;",
+      "let y = 2;",
+      "let coordinates = { x, y };"
+    ]
+  },
+  "computed-property-names": {
+    "prefix": "js-computed-props", 
+    "body": [
+      "function createWarrior(title) {",
+      "  let hero = {", 
+      "    name: 'Xena', ",
+      "    ['Warrior'+ title]: true",
+      "  }"
+      "}",
+      "createWarrior('Princess'); // creates obj { name: 'Xena', WarriorPrincess: true }"
+    ]
   }
 }
